@@ -1,13 +1,20 @@
 <?php
-$host = "YOUR_NEON_ENDPOINT"; // Neon Dashboard ???? ????
+// Neon PostgreSQL Connection Details
+$host = "ep-wispy-dust-amiz86q5-pooler.c-5.us-east-1.aws.neon.tech";
 $db   = "neondb";
-$user = "YOUR_USER";
-$pass = "YOUR_PASSWORD";
+$user = "neondb_owner";
+$pass = "npg_FJSkj3ei1Zom"; // ????? ??????? ??
+$port = "5432";
 
 try {
-    $pdo = new PDO("pgsql:host=$host;dbname=$db;sslmode=require", $user, $pass);
+    // SSL Mode require ??? ???? Neon ?? ???????? ??????? ?????
+    $dsn = "pgsql:host=$host;port=$port;dbname=$db;sslmode=require";
+    $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // ?? ??? ?? ????? (????????????)
+    // echo "Connected to Neon successfully!"; 
 } catch (PDOException $e) {
-    die("Error: Could not connect. " . $e->getMessage());
+    die("Connection failed: " . $e->getMessage());
 }
 ?>
