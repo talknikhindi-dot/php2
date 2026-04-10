@@ -2,21 +2,22 @@
 include "config.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["username"];
+    $user = $_POST["username"];
     $email = $_POST["email"];
+    // ??????? ???????? ??????????? ??? ????
+    $pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
     try {
-        // Neon SQL Connection using PDO
-        $conn = new PDO($sql_url);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $sql = "INSERT INTO users_data (name, email) VALUES (?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$name, $email]);
-
-        echo "Success: User $name added to Talknik Database!";
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$user, $email, $pass]);
+        echo "Success: User Registered!";
+    } catch (PDOException $e) {
+        if ($e->getCode() == 23505) {
+            echo "Error: Email already exists!";
+        } else {
+            echo "Error: " . $e->getMessage();
+        }
     }
 }
 ?>
