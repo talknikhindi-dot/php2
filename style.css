@@ -1,0 +1,19 @@
+body {
+    background: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    border: 2px solid #00ff00;
+    padding: 20px;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+& "C:\xampp\php\php.exe" -S localhost:4000& "C:\xampp\php\php.exe" -S localhost:4000
