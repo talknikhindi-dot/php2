@@ -1,67 +1,51 @@
 body { 
     background: #ffffff; 
-    font-family: "Segoe UI", Roboto, sans-serif; 
+    font-family: "Segoe UI", sans-serif; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    min-height: 100vh; 
+    height: 100vh; 
     margin: 0; 
 }
 .form-container { 
-    background: #ffffff; 
-    padding: 40px; 
-    border-radius: 20px; 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
-    border: 1px solid #f0f0f0;
     width: 100%; 
-    max-width: 380px; 
+    max-width: 350px; 
+    padding: 40px; 
+    background: #ffffff; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    border: 1px solid #f0f0f0; 
     text-align: center; 
 }
-.nav-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+.nav-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+.tab-btn { 
+    padding: 8px 20px; 
+    border-radius: 20px; 
+    border: 1px solid #ddd; 
+    background: none; 
+    cursor: pointer; 
+    font-weight: 600; 
 }
-.tab-btn {
-    padding: 10px 25px;
-    border-radius: 30px;
-    border: 1px solid #e0e0e0;
-    background: #fff;
-    cursor: pointer;
-    font-weight: 600;
-    color: #555;
-    transition: 0.3s;
-}
-.tab-btn.active {
-    background: #000;
-    color: #fff;
-    border-color: #000;
-}
-h2 { color: #111; margin-bottom: 30px; font-size: 24px; letter-spacing: -0.5px; }
+.tab-btn.active { background: #000; color: #fff; border-color: #000; }
+h2 { font-size: 22px; color: #111; margin-bottom: 25px; }
 input { 
     width: 100%; 
-    padding: 15px; 
-    margin-bottom: 15px;
-    border-radius: 10px; 
+    padding: 12px; 
+    margin-bottom: 15px; 
     border: 1px solid #eee; 
-    background: #fdfdfd; 
+    border-radius: 8px; 
     box-sizing: border-box; 
-    font-size: 15px;
+    background: #f9f9f9;
 }
-input:focus { border-color: #000; outline: none; background: #fff; }
-.submit-btn { 
+.publish-btn { 
     width: 100%; 
-    padding: 15px; 
+    padding: 12px; 
     background: #2563eb; 
-    color: white; 
+    color: #fff; 
     border: none; 
-    border-radius: 10px; 
+    border-radius: 8px; 
+    font-weight: bold; 
     cursor: pointer; 
-    font-weight: 700; 
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 10px;
+    text-transform: uppercase; 
 }
-.submit-btn:hover { background: #1d4ed8; }
+.publish-btn:hover { background: #1d4ed8; }
